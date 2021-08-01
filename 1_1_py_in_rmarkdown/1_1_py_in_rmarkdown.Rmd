@@ -1,0 +1,34 @@
+---
+title: "Python in R Markdown"
+author: "Hadley Wickam"
+date: "12/28/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(reticulate)
+  
+```
+
+```{python}
+
+import pandas
+
+flights = pandas.read_csv("rdata/flights.csv")
+flights = flights[flights['dest'] == 'ORD']
+flights = flights[['carrier', 'dep_delay', 'arr_delay']]
+flights = flights.dropna()
+
+```
+
+```{r fig.height=3, fig.width=7}
+
+library(ggplot2)
+
+ggplot(py$flights, aes(carrier, arr_delay)) + geom_point() +   geom_jitter()
+
+```
+
+

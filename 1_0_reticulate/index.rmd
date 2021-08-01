@@ -1,0 +1,48 @@
+---
+title: Reticulate library
+lang: en
+---
+
+***
+
+### Load library and set environment
+
+```{r warning=FALSE}
+
+library(reticulate)
+
+# List all available conda environments
+conda_list()
+
+use_python("C:\\Users\\Mark\\miniconda3\\python.exe")
+
+```
+
+***
+
+### Install packages in environments
+
+* conda_install("r-reticulate", "scipy")
+
+* conda_install("miniconda3", "scipy")
+
+***
+
+### Import python modules 
+
+* scipy <- import("scipy")
+
+***
+
+### Source a python script
+
+* source_python("script.py")
+
+***
+
+### Python session within R
+
+* repl_python() 
+
+***
+***
