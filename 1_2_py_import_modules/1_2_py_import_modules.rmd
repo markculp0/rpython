@@ -1,0 +1,26 @@
+---
+title: "Import Python modules"
+lang: en
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(reticulate)
+  
+```
+
+### Use python module in R
+
+```{r}
+
+# Import module 
+os <- import("os")
+
+# Call function
+os$listdir(".")
+
+```
+
+***

@@ -1,0 +1,33 @@
+---
+title: 'Python REPL'
+lang: en
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(reticulate)
+  
+```
+
+```{python}
+
+import pandas
+flights = pandas.read_csv("rdata/flights.csv")
+flights = flights[flights['dest'] == "ORD"]
+flights = flights[['carrier', 'dep_delay', 'arr_delay']]
+flights = flights.dropna()
+
+exit
+
+```
+
+```{r}
+
+# R console
+
+library(ggplot2)
+
+ggplot(py$flights, aes(carrier, arr_delay)) + geom_point() +   geom_jitter()
+
+```

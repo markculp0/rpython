@@ -1,0 +1,11 @@
+---
+title: Reticulate - Import Modules
+lang: en
+---
+
+***
+
+* [**Use python module in R**](1_2_py_import_modules.html)
+
+***
+***
