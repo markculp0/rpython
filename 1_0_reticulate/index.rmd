@@ -26,6 +26,8 @@ use_python("C:\\Users\\Mark\\miniconda3\\python.exe")
 
 * conda_install("miniconda3", "scipy")
 
+* py_install("scipy")
+
 ***
 
 ### Import python modules 
