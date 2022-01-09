@@ -24,4 +24,11 @@ ggplot(flights, aes(carrier, arr_delay)) + geom_point() +
   geom_jitter()  
 
 ```
+
+##### Python flights script
+
+* [flights.py](rdata/flights.py)
+
+***
+***
     

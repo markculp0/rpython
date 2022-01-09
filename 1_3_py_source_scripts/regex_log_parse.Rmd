@@ -1,0 +1,60 @@
+---
+title: "Regex Log Parse"
+lang: en
+output: 
+  html_document:
+    css: "mystyle.css"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(reticulate)
+
+```
+
+***
+
+#### Source the Python script 
+
+```{r}
+
+source_python("rdata/regex_log_parse.py")
+
+```
+
+#### Call the Python function get_log()
+
+```{r}
+
+# Return Dict as a List
+log <- get_log()
+
+```
+
+#### Create a style sheet
+
+```{r}
+
+writeLines("td, th { padding : 6px } th { background-color : grey ; color : white; border : 1px solid white; } td { color : grey ; border : 1px solid grey }", con = "mystyle.css")
+
+```
+
+#### Convert the list to a data frame
+
+```{r}
+
+log <- as.data.frame(log)
+
+```
+
+#### Print the data frame
+
+```{r,results='asis'}
+
+knitr::kable(log, format = "html")
+
+```
+
+***
+***
