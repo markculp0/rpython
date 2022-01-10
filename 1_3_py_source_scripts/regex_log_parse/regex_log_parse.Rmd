@@ -19,7 +19,7 @@ library(reticulate)
 
 ```{r}
 
-source_python("rdata/regex_log_parse.py")
+source_python("regex_log_parse.py")
 
 ```
 
@@ -27,7 +27,7 @@ source_python("rdata/regex_log_parse.py")
 
 ```{r}
 
-# Return Dict as a List
+# Return a Python Dict as an R List
 log <- get_log()
 
 ```

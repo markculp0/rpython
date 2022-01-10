@@ -7,7 +7,7 @@ lang: en
 
 * [**Source a python script**](1_3_py_source_scripts.html)
 
-* [**Python function returns Dict: Regex Log Parse**](regex_log_parse.html)
+* [**Python function returns Dict: Regex Log Parse**](regex_log_parse/regex_log_parse.html)
 
 
 ***

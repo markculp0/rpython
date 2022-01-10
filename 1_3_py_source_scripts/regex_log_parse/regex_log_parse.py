@@ -2,7 +2,7 @@ import sys
 import re
 def get_log():
   
-  infile_name = 'rdata/20210903_access.log'
+  infile_name = 'log/20210903_access.log'
   infile = open(infile_name, 'r')
   
   line_re = re.compile(r'''(?P<remote_host>\S+)\s+
