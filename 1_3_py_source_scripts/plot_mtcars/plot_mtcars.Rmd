@@ -1,0 +1,99 @@
+---
+title: "Mtcars: plot miles per gallon"
+lang: en
+output: 
+  html_document:
+    css: "mystyle.css"
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(reticulate)
+
+```
+
+***
+
+#### Source the Python script 
+
+***
+
+```{r}
+
+source_python("plot_mtcars.py")
+
+```
+
+***
+
+#### Call the Python function mtplot()
+
+***
+
+```{r}
+
+# Return a Python DataFrame as an R dataframe
+df <- mtplot()
+
+```
+
+***
+
+#### Examine the data frame
+
+***
+
+```{r,results='asis'}
+
+knitr::kable(head(df), format = "html")
+
+```
+
+***
+
+#### Graph milage by cylinders
+
+***
+
+```{r}
+  ggplot(data = df, mapping = aes(x=cyl, y=mpg, group=cyl)) +
+    geom_boxplot() + 
+    ggtitle("Car milage as a function of cylinders") +
+    xlab("number of cylinders")
+
+```
+
+***
+
+#### Graph milage by weight
+
+***
+
+```{r}
+
+  ggplot(data = df, mapping = aes(x=wt, y=mpg)) +
+    geom_point() +
+    geom_smooth() + 
+    ggtitle("Car milage as a function of weight") +
+    xlab("weight")
+
+```
+
+***
+
+#### Python script 
+
+[plot_mtcars.py](plot_mtcars.py)
+
+
+***
+***
+
+
+
+
+
+

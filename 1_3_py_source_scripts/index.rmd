@@ -9,6 +9,7 @@ lang: en
 
 * [**Python function returns Dict: Regex Log Parse**](regex_log_parse/regex_log_parse.html)
 
+* [**Python function returns dataframe: Plot Mtcars**](plot_mtcars/plot_mtcars.html)
 
 ***
 ***
